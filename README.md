@@ -2,6 +2,8 @@
 
 ## Overview
 
+<img width="1865" height="958" alt="Image" src="https://github.com/user-attachments/assets/305ac335-dbab-4b27-9104-bd7ef35b3193" />
+
 A full-stack calendar application with event scheduling, recurring events, and user management.
 
 ## Features
@@ -14,7 +16,7 @@ A full-stack calendar application with event scheduling, recurring events, and u
 
 ## Demo
 
-Check out the video demonstration of the app here: [Video Demo]().
+Check out the video demonstration of the app here: [Video Demo](https://drive.google.com/file/d/1aX2xdfN671dMg551-0n1C6l0OfuuVGLF/view?usp=sharing).
 
 ## Tech Stack
 
