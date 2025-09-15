@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+    id Int @id @default(autoincrement())
+    email String @unique
+    password String
+    name String
+    events Event[]
+}
+
+model Event {
+    id Int @id @default(autoincrement())
+    title String
+    location String?
+    description String?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    startTime DateTime
+    endTime DateTime
+    repeatType String?
+    repeatDays String?
+    repeatDate Int?
+    repeatMonth Int?
+    endType String?
+    repeatUntil DateTime?
+    repeatCount Int?
+    groupId String? 
+    deletedAt DateTime?
+    userId Int
+    user User @relation(fields: [userId], references: [id])
+    overrides     EventOverride[] 
+}
+
+model EventOverride {
+    id Int @id @default(autoincrement())
+    eventId Int
+    originalStartTime DateTime
+    originalEndTime DateTime
+    startTime DateTime
+    endTime DateTime
+    title String
+    location String?
+    description String?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    deletedAt DateTime?
+    forceDelete Boolean? @default(false)
+    event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}

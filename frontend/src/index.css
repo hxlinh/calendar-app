@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Purge unused styles in production */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for calendar app */
+body {
+  @apply bg-gray-100;
+}
+
+/* Animation for dialog */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
